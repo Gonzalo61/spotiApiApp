@@ -20,6 +20,7 @@ export class SpotifyService {
 
   getToken() {
     
+    //ACA VAN LOS DATOS DE CADA CUENTA DE DESARROLLADOR DE SPOTIFY
     const url = 'https://spotifyapp-get-token-master.herokuapp.com/spotify/9b6e75fb0ba8473a900b2c47ecc72507/3bdb7f815f514a0ba5b94962de8df399';
       const prom = this.http.get(url).toPromise().then((data: any) => data.access_token);
 
