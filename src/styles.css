@@ -1,0 +1,365 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    background-color: black;
+    color: white !important;
+}
+
+hr {
+    border-color: white;
+}
+
+.puntero {
+    cursor: pointer;
+}
+
+.img-circle {
+    border-radius: 100%;
+    width: 150px;
+}
+
+.card-title,
+.card-text {
+    color: black;
+}
+
+.badge {
+    margin-left: 5px;
+}
+
+.btn-outline-success {
+    margin-left: 5px;
+}
+
+.img-thumb {
+    width: 50px;
+    height: 50px;
+}
+
+#tarjeta {
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-color: rgba(0, 210, 100, 1);
+}
+
+#tarjeta:hover {
+    transform: scale(1.15);
+    z-index: 200;
+    box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+/* Animaciones */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+.loader-wrap {
+    width: 50px;
+    height: 50px;
+    top: 25%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    filter: url('#goo');
+    animation: rotate-move 2s ease-in-out infinite;
+}
+
+.dot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.dot-3 {
+    background-color: #f74d75;
+    animation: dot-3-move 2s ease infinite, index 6s ease infinite;
+}
+
+.dot-2 {
+    background-color: #10beae;
+    animation: dot-2-move 2s ease infinite, index 6s -4s ease infinite;
+}
+
+.dot-1 {
+    background-color: #ffe386;
+    animation: dot-1-move 2s ease infinite, index 6s -2s ease infinite;
+}
+
+@keyframes dot-3-move {
+    20% {
+        transform: scale(1)
+    }
+    45% {
+        transform: translateY(-18px) scale(.45)
+    }
+    60% {
+        transform: translateY(-45px) scale(.45)
+    }
+    80% {
+        transform: translateY(-45px) scale(.45)
+    }
+    100% {
+        transform: translateY(0px) scale(1)
+    }
+}
+
+@keyframes dot-2-move {
+    20% {
+        transform: scale(1)
+    }
+    45% {
+        transform: translate(-8px, 6px) scale(.45)
+    }
+    60% {
+        transform: translate(-40px, 30px) scale(.45)
+    }
+    80% {
+        transform: translate(-40px, 30px) scale(.45)
+    }
+    100% {
+        transform: translateY(0px) scale(1)
+    }
+}
+
+@keyframes dot-1-move {
+    20% {
+        transform: scale(1)
+    }
+    45% {
+        transform: translate(8px, 6px) scale(.45)
+    }
+    60% {
+        transform: translate(40px, 30px) scale(.45)
+    }
+    80% {
+        transform: translate(40px, 30px) scale(.45)
+    }
+    100% {
+        transform: translateY(0px) scale(1)
+    }
+}
+
+@keyframes rotate-move {
+    55% {
+        transform: translate(-50%, -50%) rotate(0deg)
+    }
+    80% {
+        transform: translate(-50%, -50%) rotate(360deg)
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg)
+    }
+}
+
+@keyframes index {
+    0%,
+    100% {
+        z-index: 3
+    }
+    33.3% {
+        z-index: 2
+    }
+    66.6% {
+        z-index: 1
+    }
+}
+
+
+/* SEARCH */
+
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
+.buscar {
+    position: absolute;
+    margin-top: 3.5%;
+    top: 0;
+    left: 25%;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    height: 100px;
+}
+
+.buscar .search {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 210, 100, 1);
+    border-radius: 50%;
+    transition: all 1s;
+    z-index: 4;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+}
+
+.buscar .search:hover {
+    cursor: pointer;
+}
+
+.buscar .search::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 22px;
+    right: 0;
+    bottom: 0;
+    left: 22px;
+    width: 12px;
+    height: 2px;
+    background: white;
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+
+.buscar .search::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: -5px;
+    right: 0;
+    bottom: 0;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all 0.5s;
+}
+
+.buscar input {
+    /* font-family: "Inconsolata", monospace; */
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border: none;
+    background: rgba(0, 210, 100, 1);
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 210, 100, 1);
+    padding: 0 80px 0 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 25px 0 rgba(0, 210, 100, 1), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    transition: all 1s;
+    opacity: 0;
+    z-index: 5;
+    /* font-weight: bolder; */
+    letter-spacing: 0.1em;
+}
+
+.buscar input:hover {
+    cursor: pointer;
+}
+
+.buscar input:focus {
+    width: 550px;
+    opacity: 1;
+    cursor: text;
+}
+
+.buscar input:focus~.search {
+    right: -740px;
+    background: #151515;
+    z-index: 6;
+}
+
+.buscar input:focus~.search::before {
+    top: 0;
+    left: 0;
+    width: 25px;
+}
+
+.buscar input:focus~.search::after {
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    border: none;
+    background: white;
+    border-radius: 0%;
+    transform: rotate(-45deg);
+}
+
+.buscar input::placeholder {
+    color: white;
+    opacity: 0.5;
+    /* font-weight: bolder; */
+}
+
+
+/* NEON BUTTON*/
+
+button {
+    position: relative;
+    display: inline;
+    padding: 8px 13px;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    transition: 0.2s;
+    background-color: black;
+    border-color: transparent;
+}
+
+.btns {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* min-height: 90vh; */
+    flex-direction: row;
+}
+
+.blue-btn {
+    color: rgba(0, 210, 100, 1);
+    border: 1.5px solid rgba(0, 210, 100, 1);
+    border-radius: 7px;
+}
+
+.blue-btn:hover {
+    background-color: rgba(0, 210, 100, 1);
+    color: #050801;
+    box-shadow: 0px 0px 5px rgba(0, 210, 100, 1), 0px 0px 25px rgba(0, 210, 100, 1), 0px 0px 50px rgba(0, 210, 100, 1), 0px 0px 100px rgba(0, 210, 100, 1);
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    border-color: transparent;
+}

@@ -1,0 +1,31 @@
+<!-- <div class="row">
+    <div class="col">
+        <input id="busqueda" #termino type="text" (keyup)="buscar(termino.value)" class="form-control animated fadeIn" placeholder="Buscar artista" style="border-radius: 0.25rem; border-color: rgba(0, 210, 100, 1); z-index: 100;">
+    </div>
+</div> -->
+
+
+<div class="buscar">
+    <input id="busqueda" #termino type="text" (keyup)="buscar(termino.value) " placeholder="Buscar artista">
+    <div class="search"></div>
+</div>
+
+
+<!-- <div class="card-columns" style="margin-top: 20px;">
+    <div *ngFor="let artista of artistas" class="card">
+        <img [src]="artista.images | noimage" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 style="text-align: center;" class="card-title">{{artista.name}}</h5>
+             <p class="card-text">
+                <span *ngFor="let artista of cancion.artists" class="badge badge-pill badge-success">
+                    {{ artista.name }}
+                </span> 
+            </p> 
+        </div>
+    </div>
+</div> -->
+
+
+<app-loading *ngIf="loading"></app-loading>
+
+<app-tarjetas *ngIf="!loading" [items]="artistas"></app-tarjetas>
